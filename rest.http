@@ -1,0 +1,44 @@
+@rootURL = http://localhost:8000
+@apiEP = {{rootURL}}/api/v1
+@userAPI = {{apiEP}}/users
+@bookAPI = {{apiEP}}/books
+@reviewAPI = {{apiEP}}/reviews
+
+
+
+### Check teh server status
+GET {{rootURL}}
+
+###===== user api
+### Get user  
+GET {{userAPI}}
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE3MTYyNTcxOTQsImV4cCI6MTcxNjI1ODA5NH0.G8DLTNrAkjC9RO5FrgEMREud-c-GH3ouzk3JcL4BWFQ
+
+### Post user 
+POST {{userAPI}}
+Content-Type: application/json
+
+{
+    "fName": "prem",
+    "lName": "presfdsm",
+    "phone": 34567,
+    "email": "{asdf@sdfc.com",
+    "password": "sdfdsf"
+  
+}
+  
+# ======== Book
+### Get all books for the admin 
+GET {{bookAPI}}/all
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAYS5jb20iLCJpYXQiOjE3MTY4NTE1NjksImV4cCI6MTcxNjg1MTYyOX0.iJPaoDTwqcY7udFwkvLQLlTCqRjve1430CzduQEUqes
+
+
+
+### Get all public books for the user 
+GET {{bookAPI}}/
+
+
+
+###===== REviews api
+### Get review  
+GET {{reviewAPI}}
